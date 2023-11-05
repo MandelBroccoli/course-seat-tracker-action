@@ -19,7 +19,7 @@ class CS189(BaseCourse):
     def extract_data(self, data_json):
         try:
             data = json.loads(data_json)
-            enrolled = data.get('available',{}).get('enrollmentStatus',{}).get('enrolledCount',0)
+            enrolled = data.get('available',{}).get('enrollmentStatus',{}).get('enrolledCount',0) - 1
             max_enrolled = data.get('available',{}).get('enrollmentStatus',{}).get('maxEnroll',0)
             waitlisted = data.get('available', {}).get('enrollmentStatus', {}).get('waitlistedCount', 0)
             max_waitlist = data.get('available', {}).get('enrollmentStatus', {}).get('maxWaitlist', 0)
